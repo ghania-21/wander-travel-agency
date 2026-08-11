@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WANDER — Go somewhere you've never been.</title>
+<meta name="description" content="WANDER is a premium travel planning experience. Plan unforgettable journeys, beautifully." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="on-dark">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">WANDER</a>
+
+  <nav aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="#explore">Explore</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="planner.html">Plan Your Trip</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <a href="planner.html" class="nav-cta">Start Planning</a>
+  <button class="nav-toggle btn-icon" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M0 1H18M0 6H18M0 11H18" stroke="currentColor"/></svg>
+  </button>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="explore">
+    <div class="hero-media" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1920&q=80" alt="" loading="eager" onerror="this.style.display='none'">
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow" data-reveal>Explore the World</span>
+        <h1 class="hero-title" aria-label="Go somewhere you've never been.">
+          <span class="line"><span>GO SOMEWHERE</span></span>
+          <span class="line"><span>YOU'VE NEVER BEEN.</span></span>
+        </h1>
+        <p class="hero-sub" data-reveal>Plan unforgettable journeys, beautifully.</p>
+        <div class="hero-ctas" data-reveal>
+          <a href="planner.html" class="btn btn-primary">Start Planning <span class="arrow">→</span></a>
+          <a href="#destinations" class="btn btn-ghost">Explore Destinations</a>
+        </div>
+      </div>
+
+      <div class="hero-globe-wrap" data-reveal="scale">
+        <canvas id="heroGlobe" aria-hidden="true"></canvas>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ================= SEARCH ================= -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-box" data-reveal>
+        <span class="eyebrow">Start Here</span>
+        <h2 style="margin-top:16px; font-size:clamp(2rem,4.4vw,3.2rem);">Where do you want to go?</h2>
+        <div class="field-search" style="margin-top:38px;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M18 18L13.8 13.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <label for="homeSearchInput" class="sr-only">Search a destination</label>
+          <input type="text" id="homeSearchInput" placeholder="Try “Bali” or “Paris”…" autocomplete="off">
+          <button type="button" class="btn btn-icon search-go" id="homeSearchGo" aria-label="Search">→</button>
+        </div>
+        <div class="search-suggestions">
+          <span>Popular:</span>
+          <button type="button" class="choice-pill" data-dest="Bali">Bali</button>
+          <button type="button" class="choice-pill" data-dest="London">London</button>
+          <button type="button" class="choice-pill" data-dest="Paris">Paris</button>
+          <button type="button" class="choice-pill" data-dest="Dubai">Dubai</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DESTINATIONS ================= -->
+  <section class="destinations" id="destinations">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Where Will You Go?</span>
+      <h2>Six places worth<br>rearranging your year for.</h2>
+    </div>
+
+    <div id="destinationPanels"></div>
+  </section>
+
+  <!-- ================= EDITORIAL ================= -->
+  <section class="section editorial">
+    <div class="container editorial-grid">
+      <div class="editorial-media" data-reveal="scale">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1000&q=80" alt="Winding mountain road disappearing into misty peaks" loading="lazy" onerror="this.parentElement.style.background='var(--sand)'">
+      </div>
+      <div class="editorial-copy" data-reveal>
+        <span class="eyebrow">The Wander Way</span>
+        <h2>Travel <em>differently.</em></h2>
+        <p>The best trips aren't the ones you rush through — they're the ones that stay with you. We plan journeys with room to wander: fewer stops, better ones, and time enough to actually be there.</p>
+        <div style="margin-top:32px;">
+          <a href="planner.html" class="btn btn-ghost">Discover places that stay with you →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section about" id="about">
+    <div class="container about-grid">
+      <div data-reveal>
+        <span class="eyebrow">About Wander</span>
+        <h2 style="margin-top:16px; font-size:clamp(2.2rem,4.4vw,3.4rem);">We plan the trip.<br>You live the story.</h2>
+        <p style="margin-top:24px; color:var(--ink-70); max-width:440px; font-size:1.05rem;">
+          Wander began with a simple frustration: travel planning tools felt like spreadsheets,
+          not journeys. So we built one that feels like the trip itself — considered, unhurried,
+          and a little bit cinematic.
+        </p>
+        <div class="about-stat">
+          <div><strong>128</strong><span>Destinations</span></div>
+          <div><strong>40k+</strong><span>Journeys planned</span></div>
+          <div><strong>4.9</strong><span>Average rating</span></div>
+        </div>
+        <div style="margin-top:40px;">
+          <a href="planner.html" class="btn btn-ghost">Begin your journey →</a>
+        </div>
+      </div>
+      <div class="about-media" data-reveal="scale">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80" alt="Traveller looking out over a coastal cliffside at sunset" loading="lazy" onerror="this.parentElement.style.background='var(--sand)'">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="section gallery">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Travel Inspiration</span>
+        <h2>Moments worth<br>the detour.</h2>
+      </div>
+      <div class="gallery-grid" data-reveal-stagger>
+        <div class="gallery-item is-large">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80" alt="Neon-lit crossing at night in Tokyo" loading="lazy">
+          <span class="gallery-caption">Tokyo, after dark</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&q=80" alt="Eiffel Tower framed by Parisian rooftops" loading="lazy">
+          <span class="gallery-caption">Paris rooftops</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=80" alt="Dubai skyline at golden hour" loading="lazy">
+          <span class="gallery-caption">Dubai, golden hour</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=80" alt="Terraced rice fields in Bali" loading="lazy">
+          <span class="gallery-caption">Ubud rice terraces</span>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=700&q=80" alt="Ancient Roman ruins at dusk" loading="lazy">
+          <span class="gallery-caption">Rome, at dusk</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="final-cta">
+    <div class="container" data-reveal>
+      <span class="eyebrow">Your Next Journey</span>
+      <h2>Your next journey starts here.</h2>
+      <a href="planner.html" class="btn btn-primary">Start Exploring <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Wander</h4>
+          <ul>
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="planner.html">Plan Your Trip</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Experiences</h4>
+          <ul>
+            <li><a href="planner.html">Custom Itineraries</a></li>
+            <li><a href="#destinations">Editorial Guides</a></li>
+            <li><a href="#about">Concierge Planning</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@wander.travel">hello@wander.travel</a></li>
+            <li><a href="#">Karachi · Remote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-social" aria-label="Social links">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Pinterest">PN</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Wander. All rights reserved.</span>
+      <span>DecodeLabs Frontend Development — Project 4</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/globe.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
